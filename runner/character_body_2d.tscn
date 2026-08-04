@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://d05mcrv2w4j47"]
+
+[ext_resource type="Script" path="res://CharacterBody2d.cs" id="1_lhvu3"]
+[ext_resource type="Texture2D" uid="uid://ddkh36i3bofe0" path="res://kenney_new-platformer-pack-1.1/Sprites/Characters/Default/character_yellow_idle.png" id="3_4sjlk"]
+[ext_resource type="Texture2D" uid="uid://cbe48cwtpyw8l" path="res://kenney_new-platformer-pack-1.1/Sprites/Characters/Default/character_yellow_jump.png" id="4_qp52p"]
+[ext_resource type="Texture2D" uid="uid://duf1qlhlsn3oy" path="res://kenney_new-platformer-pack-1.1/Sprites/Characters/Default/character_yellow_walk_b.png" id="5_6ct3r"]
+[ext_resource type="Texture2D" uid="uid://dgj3srsm22d8s" path="res://kenney_new-platformer-pack-1.1/Sprites/Characters/Default/character_yellow_walk_a.png" id="6_1kp85"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qnedo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_4sjlk")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_qp52p")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_6ct3r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_1kp85")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D" unique_id=752921836]
+script = ExtResource("1_lhvu3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=536829170]
+sprite_frames = SubResource("SpriteFrames_qnedo")
+animation = &"idle"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1434017718]
+polygon = PackedVector2Array(0, -30, 28, -19, 36, 3, 33, 20, 25, 30, 35, 39, 31, 47, 19, 44, 18, 57, 10, 62, 6, 50, -7, 49, -7, 59, -16, 61, -20, 45, -29, 47, -34, 39, -26, 30, -37, 14, -32, -12)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1029384756]
+offset = Vector2(530, -200)
+position_smoothing_enabled = true

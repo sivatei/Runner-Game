@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://8kfrev7l7h07"]
+
+[ext_resource type="Texture2D" uid="uid://s6h3s8vblf8f" path="res://kenney_new-platformer-pack-1.1/Sprites/Tiles/Default/door_open_top.png" id="1_ba8gm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v6xrn"]
+size = Vector2(59, 62)
+
+[node name="Door" type="Area2D" unique_id=1734634808]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=584373480]
+texture = ExtResource("1_ba8gm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1726312798]
+position = Vector2(0.5, 2)
+shape = SubResource("RectangleShape2D_v6xrn")
