@@ -1,0 +1,15 @@
+# Godot
+.godot/
+.mono/
+
+# C# / .NET
+bin/
+obj/
+.vs/
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
+*.log
+*.tmp
